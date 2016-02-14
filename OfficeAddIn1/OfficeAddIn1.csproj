@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B515673-6C02-4C3D-974B-F31E58D2B2FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OfficeAddIn1</RootNamespace>
+    <AssemblyName>OfficeAddIn1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
+    <AppFeaturePartId>{9cb865be-9309-4ff2-a07d-d3a66c167e35}</AppFeaturePartId>
+    <WspPartId>{e66a7492-6696-415c-9939-2b599bdb0293}</WspPartId>
+    <WorkflowPartId>{33d0d19e-42ce-4ad5-82ca-510e7e0c0bf8}</WorkflowPartId>
+    <CspkgPartId>{b1fcf1a6-9d19-423f-a901-0c6c85273533}</CspkgPartId>
+    <SqlPackagePartId>{681c8f4b-9be3-458e-ba8a-9d672073cc75}</SqlPackagePartId>
+    <ProjectMode>OfficeApp</ProjectMode>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>12.2</MinimumOfficeToolsVersion>
+    <ActivePublishProfile>P</ActivePublishProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="OfficeAddIn1Manifest\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8c144d3a-b188-4dae-9677-f926ef6a11b4}</SharePointProjectItemId>
+    </None>
+    <Content Include="OfficeAddIn1Manifest\OfficeAddIn1.xml">
+      <OpcRelationship>manifest-oemanifest</OpcRelationship>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OfficeAddIn1Web\OfficeAddIn1Web.csproj">
+      <Project>{51082217-ECFD-439E-852F-4A0525A61147}</Project>
+      <Name>OfficeAddIn1Web</Name>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <OutputItemType>SharePointWebProjectOutput</OutputItemType>
+      <RoleName>OfficeAddIn1Web</RoleName>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
